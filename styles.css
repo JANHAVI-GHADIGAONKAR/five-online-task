@@ -95,6 +95,22 @@ body {
     transform: translateY(0);
 }
 } */
+
+.page-footer {
+    position: fixed;
+    right: 0;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    z-index: 1;
+  }
+  
+  .page-footer a {
+    display: flex;
+    margin-left: 4px;
+  }
+  
 .card-img-top{
     height: 10rem;
 }

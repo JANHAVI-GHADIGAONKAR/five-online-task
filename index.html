@@ -113,15 +113,58 @@
     </section>
 
     <!-- Contact Form Section -->
-    <!-- <section id="contact">
-        <h2>Contact Us</h2>
-        <form action="https://formsubmit.co/adarsh.fiveonline@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </section> -->
+    <section id="contact">
+        
+        <div class="container my-5">
+            <div class="row justify-content-center">
+              <div class="col-lg-9">
+                <h2 class="mb-3">Contact Us</h2>
+                <form action="send_email.php" method="post">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="name" class="form-label">Your Name</label>
+                      <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="col-md-6">
+                      <label for="your-email" class="form-label">Your Email</label>
+                      <input type="email" class="form-control" id="your-email" name="your-email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="tel" class="form-label">Your Phone</label>
+                        <input id="tel" type="tel" class="form-control"  name="tel" required>
+                      </div>
+                    <div class="col-md-6">
+                      <label for="sub" class="form-label">Your Subject</label>
+                      <input type="text" class="form-control" id="sub" name="sub">
+                    </div>
+                    <div class="col-12">
+                      <label for="message" class="form-label">Your Message</label>
+                      <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <div id="msgSubmit" class="form-message hidden"></div>
+                    </div>
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <button id="form-submit" type="submit" class="btn btn-dark w-100 fw-bold" >Send</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <!-- <footer class="page-footer">
+            <span>made by </span>
+            <a href="https://georgemartsoukos.com/" target="_blank">
+              <img width="24" height="24" src="https://assets.codepen.io/162656/george-martsoukos-small-logo.svg" alt="George Martsoukos logo">
+            </a>
+          </footer> -->
+    </section>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
