@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    overflow-y: scroll;
 }
 
 .carousel-item{
@@ -50,25 +51,59 @@ body {
 }
 
 
-#services {
-    padding: 50px;
-    text-align: center;
+.slick-prev{
+    background-image: url(images/prev-arrow.svg);
+}
+.slick-next{
+    background-image: url(images/next-arrow.svg);
+    width: 50px;
+    height: 40px;
+    background-size: cover;
 }
 
-#services .service-box {
-    display: inline-block;
-    width: 300px;
-    margin: 20px;
+.our-services{
+    visibility: visible;
+    animation-delay: 0.5s;
+    animation-name: fadeInUp;
+}
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+/* @-webkit-keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+}
+100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+}@keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+}
+100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+} */
+.card-img-top{
+    height: 10rem;
+}
+.service {
+    gap: 1rem; /* Adjust the value as needed */
 }
 
-#services .service-box img {
-    width: 100%;
-}
-
-#services .service-content {
-    background: #f4f4f4;
-    padding: 20px;
-    text-align: left;
+.card {
+    margin: 0.5rem; /* Add margin around each card for spacing */
 }
 
 #contact {
