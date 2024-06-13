@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,7 +121,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-9">
                 <h2 class="mb-3">Contact Us</h2>
-                <form action="send_email.php" method="post">
+                <form action="send_email.php" method="POST">
                   <div class="row g-3">
                     <div class="col-md-6">
                       <label for="name" class="form-label">Your Name</label>
@@ -127,16 +129,16 @@
                     </div>
                     
                     <div class="col-md-6">
-                      <label for="your-email" class="form-label">Your Email</label>
-                      <input type="email" class="form-control" id="your-email" name="your-email" required>
+                      <label for="email" class="form-label">Your Email</label>
+                      <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="col-md-6">
-                        <label for="tel" class="form-label">Your Phone</label>
-                        <input id="tel" type="tel" class="form-control"  name="tel" required>
+                        <label for="phone" class="form-label">Your Phone</label>
+                        <input id="phone" type="tel" class="form-control"  name="phone" required>
                       </div>
                     <div class="col-md-6">
-                      <label for="sub" class="form-label">Your Subject</label>
-                      <input type="text" class="form-control" id="sub" name="sub">
+                      <label for="subject" class="form-label">Your Subject</label>
+                      <input type="text" class="form-control" id="subject" name="subject">
                     </div>
                     <div class="col-12">
                       <label for="message" class="form-label">Your Message</label>
@@ -148,7 +150,7 @@
                     <div class="col-12">
                       <div class="row">
                         <div class="col-md-6">
-                          <button id="form-submit" type="submit" class="btn btn-dark w-100 fw-bold" >Send</button>
+                          <button id="submit" type="submit" class="btn btn-dark w-100 fw-bold" >Send</button>
                         </div>
                       </div>
                     </div>
@@ -174,8 +176,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.0/lazysizes.min.js" async></script>
     <script src="script.js"></script>
-
-
+    
     <script>
 
         $(document).ready(function(){

@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php'; // Path to PHPMailer autoload file
+require 'vendor/autoload.php'; // Ensure this path is correct for PHPMailer
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -7,17 +7,19 @@ use PHPMailer\PHPMailer\Exception;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
+    $phone = htmlspecialchars($_POST['phone']);
+    $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars(nl2br($_POST['message']));
 
     $mail = new PHPMailer(true);
 
     try {
         //Server settings
-        $mail->isSMTP();                                         // Send using SMTP
+        $mail->isSMTP();
         $mail->Host       = 'smtp.example.com';                  // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                // Enable SMTP authentication
         $mail->Username   = 'janhavi.ghadi09@gmail.com';            // SMTP username
-        $mail->Password   = 'mjnn jsgi bdjl tnso';                     // SMTP password
+        $mail->Password   = 'mjnnjsgibdjltnso';                     // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;      // Enable TLS encryption
         $mail->Port       = 587;                                 // TCP port to connect to
 
@@ -26,10 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->addAddress('janhavi.ghadi09@gmail.com');        // Add a recipient
 
         // Content
-        $mail->isHTML(true);                                     // Set email format to HTML
-        $mail->Subject = 'New Contact Form Submission';
-        $mail->Body    = "<h3>Name: $name</h3><h3>Email: $email</h3><p>Message: $message</p>";
-        $mail->AltBody = "Name: $name\nEmail: $email\nMessage: $message";
+        $mail->isHTML(true);
+        $mail->Subject = 'New Contact Form Submission: ' . $subject;
+        $mail->Body    = "<h3>Name: $name</h3><h3>Email: $email</h3><h3>Phone: $phone</h3><h3>Subject: $subject</h3><p>Message: $message</p>";
+        $mail->AltBody = "Name: $name\nEmail: $email\nPhone: $phone\nSubject: $subject\nMessage: $message";
 
         $mail->send();
         echo 'Message has been sent';
@@ -37,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 } else {
-    echo "Invalid request method.";
+    http_response_code(405);
+    echo "405 Method Not Allowed";
 }
 ?>
