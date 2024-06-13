@@ -4,7 +4,11 @@ require 'vendor/autoload.php'; // Ensure this path is correct for PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+header("Access-Control-Allow-Origin: *");  // Allow cross-origin requests for debugging
+header("Access-Control-Allow-Methods: POST");  // Allow POST requests
+header("Access-Control-Allow-Headers: Content-Type");
+
+if (isset($_POST['submit'])) {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
@@ -20,7 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPAuth   = true;                                // Enable SMTP authentication
         $mail->Username   = 'janhavi.ghadi09@gmail.com';            // SMTP username
         $mail->Password   = 'mjnnjsgibdjltnso';                     // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;      // Enable TLS encryption
+        $mail->SMTPSecure = 'tls';                    
+        // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;      // Enable TLS encryption
         $mail->Port       = 587;                                 // TCP port to connect to
 
         //Recipients
